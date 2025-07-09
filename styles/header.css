@@ -1,0 +1,87 @@
+header{
+    /* LARGURA = WIDTH */
+    width: 100%;
+    /* ESPAÇAMENTO INTERNO = PADDING */
+    padding: 28px 8%;
+    /* MANTEM O HEADER FIXO NO TOPO DO SITE */
+    position: sticky;
+    top: 0;
+    background-color: #fff9ea;
+    z-index: 3;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav_logo {
+    font-size: 24px;
+    color: #e9a209;
+}
+
+#nav_list{
+    display: flex;
+    /* RETIRNDO A * BOLINHA DE LISTAS */
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: #1d1d1dad;
+    /* AUMENTAR GROSSURA DA FONTE */
+    font-weight: 600;
+}
+
+.nav-item.active a{
+    color: #1d1d1d;
+    border-bottom: 3px solid #ffe100;
+}
+
+#mobile_btn{
+    display: none;
+}
+
+#mobile_menu{
+    display: none;
+}
+
+/* QUANDO MINHA TELA TER UM MAXIMO DE 1170PX O BOTÃO VAI APARECER */
+/* E TAMBÉM, MINHA LISTA VAI DESAPARECER */
+@media screen and (max-width: 1170px){
+    /* APARECER */
+    #mobile_btn{
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    /* DESAPARECER */
+    #nav_list,
+    #navbar .btn-default{
+        display: none;
+    }
+
+    #mobile_menu.active{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile_nav_list{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;
+    }
+
+    #mobile_nav_list li{
+        list-style: none;
+        text-align: center;
+    }
+    
+}
